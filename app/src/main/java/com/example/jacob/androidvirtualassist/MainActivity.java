@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         Notification notification = new Notification.Builder(this)
             .setContentTitle(getString(R.string.app_name))
             .setContentText(getString(R.string.running))
-            .setSmallIcon(R.drawable.ic_launcher)
+            .setSmallIcon(R.drawable.ic_stat_a).setColor(00253271)
             .setOngoing(true)
             .setContentIntent(PendingIntent.getActivity(this, 0, thisIntent, 0))
             .build();
