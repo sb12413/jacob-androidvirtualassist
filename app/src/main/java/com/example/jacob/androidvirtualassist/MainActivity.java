@@ -207,9 +207,11 @@ public class MainActivity extends AppCompatActivity {
         logout();
     }
     public void removeFromFirebase(){
-//        String uids = firebase.getAuth().getUid();
-//        Firebase fire = new Firebase(Constants.FIREBASE_URL);
-//        fire.child("users").child(uids).child("cloudSettings").child(Constants.KEY).removeValue();
+        firebase = new Firebase(Constants.FIREBASE_URL);
+        String uids = firebase.getAuth().getUid();
+        firebase = new Firebase(Constants.FIREBASE_URL+"/users/"+uids+"/cloudSettings/");
+        System.out.println(firebase);
+        firebase.setValue(null);
 //        System.out.println("KEY_OUT:"+Constants.KEY);
     }
 }

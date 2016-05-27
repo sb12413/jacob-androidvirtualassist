@@ -3,6 +3,7 @@ package com.example.jacob.androidvirtualassist;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -75,7 +76,7 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.On
     }
 
     @Override
-    public void onConnectionFailed(ConnectionResult connectionResult) {
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
         Log.e(TAG, "onConnectionFailed: " + connectionResult.getErrorMessage());
     }
 
@@ -105,6 +106,7 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.On
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             if (result.isSuccess()){
                 GoogleSignInAccount account = result.getSignInAccount();
+                assert account != null;
                 String emailAddress = account.getEmail();
                 getGoogleOAuthToken(emailAddress);
             }
@@ -200,6 +202,6 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.On
             }
         });
         //firebase = new Firebase(Constants.FIREBASE_URL+"/users/" + uids + "/cloudSettings");
-        //firebase.child("users").child(uids).child("cloudSettings").push().setValue(cl);
+        firebase.child("users").child(uids).child("cloudSettings").setValue(cl);
     }
 }
