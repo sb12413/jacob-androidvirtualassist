@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.example.jacob.androidvirtualassist.MainActivity">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        android:layout_margin="16dp"
+        android:weightSum="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/not_running"
+                android:id="@+id/status"
+                android:layout_marginTop="16dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:layout_toStartOf="@+id/stop"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="128dp"
+                android:layout_weight="0.31" />
+
+            <ToggleButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="New ToggleButton"
+                android:id="@+id/startStopButton"
+                android:layout_gravity="bottom|center_horizontal"
+                style="?android:textAppearanceSmall"
+                android:background="@color/colorPrimaryDark"
+                android:layout_marginTop="128dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textOff="@string/start"
+                android:textOn="@string/stop"
+                android:enabled="true" />
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/connect"
+                android:id="@+id/button"
+                style="?android:textAppearanceSmall"
+                android:background="@color/colorPrimaryDark"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+</LinearLayout>
