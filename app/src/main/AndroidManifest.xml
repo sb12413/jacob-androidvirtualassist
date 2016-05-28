@@ -25,6 +25,18 @@
             android:name="com.example.jacob.androidvirtualassist.MainActivity"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustResize" >
+            <intent-filter>
+                <data
+                    android:scheme="https"
+                    android:host="jacob-androidvirtualassistant.com"
+                    />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+            </intent-filter>
 
         </activity>
         <activity

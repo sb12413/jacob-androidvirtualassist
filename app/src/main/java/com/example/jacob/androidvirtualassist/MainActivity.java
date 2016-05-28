@@ -7,6 +7,7 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.media.projection.MediaProjectionManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
@@ -87,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     startSenderService();
+                    shareCloudSettings();
                 } else {
                     stopSenderService();
                 }
@@ -212,6 +214,14 @@ public class MainActivity extends AppCompatActivity {
         firebase = new Firebase(Constants.FIREBASE_URL+"/users/"+uids+"/cloudSettings/");
         System.out.println(firebase);
         firebase.setValue(null);
-//        System.out.println("KEY_OUT:"+Constants.KEY);
+    }
+    public void shareCloudSettings(){
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        String viewerCloudSettings = CloudSettings.getViewerCloudAddress()+"/"+CloudSettings.getViewerCloudPassword()+"/"+CloudSettings.getPeerCloudAddress();
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "https://jacob-androidvirtualassistant.com/"+viewerCloudSettings);
+        sendIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse(viewerCloudSettings));
+        sendIntent.setType("text/plain");
+        startActivity(Intent.createChooser(sendIntent, "Send to"));
     }
 }

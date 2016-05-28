@@ -3,4 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools">
     <item android:id="@+id/action_logout" android:title="@string/action_logout"
         android:orderInCategory="100" app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_item_share"
+        android:title="Share"
+        android:orderInCategory="50"
+        android:actionProviderClass=
+            "android.widget.ShareActionProvider" />
 </menu>
