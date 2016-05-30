@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
     protected void updateStatus(boolean running) {
         if (running) {
             String text = getString(R.string.running) + "\n\n" +
-                getString(R.string.password) + " " + mService.getPassword();
+                getString(R.string.password) + ": " + mService.getPassword();
             mStatusText.setText(text);
             
         } else {

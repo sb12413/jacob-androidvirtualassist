@@ -5,8 +5,8 @@
     <string name="status">Status</string>
     <string name="start">Start</string>
     <string name="stop">Stop</string>
-    <string name="running">Server is running</string>
-    <string name="not_running">Server is not running</string>
+    <string name="running">You are now sharing the content of your screen</string>
+    <string name="not_running">Press START share screen content</string>
     <string name="action_settings">Settings</string>
     <string name="server_address">Server address</string>
     <string name="toggle_keyboard">Toggle keyboard</string>
